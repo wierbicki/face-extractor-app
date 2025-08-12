@@ -41,7 +41,7 @@ def main():
         with col1:
             st.subheader("📷 Original Image")
             image = Image.open(uploaded_file)
-            st.image(image, use_column_width=True)
+            st.image(image, use_container_width=True)
             
             # Image info
             st.info(f"Image size: {image.size[0]} x {image.size[1]} pixels")
@@ -83,8 +83,20 @@ def main():
                         for i, (x, y, w, h) in enumerate(faces):
                             status_text.text(f"Processing face {i+1}/{len(faces)}...")
                             
-                            # Extract face region
-                            face_region = image_cv[y:y+h, x:x+w]
+                            # Expand the face region to include more context (hair, etc.)
+                            # Add 40% padding on all sides
+                            padding_factor = 0.4
+                            padding_x = int(w * padding_factor)
+                            padding_y = int(h * padding_factor)
+                            
+                            # Calculate expanded coordinates
+                            x_start = max(0, x - padding_x)
+                            y_start = max(0, y - padding_y)
+                            x_end = min(image_cv.shape[1], x + w + padding_x)
+                            y_end = min(image_cv.shape[0], y + h + padding_y)
+                            
+                            # Extract expanded face region
+                            face_region = image_cv[y_start:y_end, x_start:x_end]
                             
                             # Convert back to RGB for PIL
                             face_rgb = cv2.cvtColor(face_region, cv2.COLOR_BGR2RGB)
