@@ -2,7 +2,7 @@
 
 ## Repository Information
 - **Repository Name**: face-extractor-app
-- **Repository Description**: A Streamlit web application for uploading images and automatically extracting detected faces as 200x200 pixel image files
+- **Repository Description**: Eine Streamlit-Webanwendung zum Hochladen von Bildern und automatischen Extrahieren erkannter Gesichter als 200x200 Pixel Bilddateien
 
 ## Overview
 
