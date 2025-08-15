@@ -1,8 +1,12 @@
 # Face Extractor
 
+## Repository Information
+- **Repository Name**: face-extractor-app
+- **Repository Description**: A Streamlit web application for uploading images and automatically extracting detected faces as 200x200 pixel image files
+
 ## Overview
 
-Face Extractor is a Streamlit-based web application that automatically detects and extracts faces from uploaded images. The application uses OpenCV's Haar cascade classifiers to identify faces in images and extracts them as standardized 200x200 pixel images. Users can upload images in common formats (JPG, JPEG, PNG) and download the extracted faces individually or as a batch.
+Face Extractor is a Streamlit-based web application that automatically detects and extracts faces from uploaded images. The application uses OpenCV's Haar cascade classifiers to identify faces in images and extracts them as standardized 200x200 pixel images with expanded context (including hair and surrounding areas). Users can upload images in common formats (JPG, JPEG, PNG) and download the extracted faces individually or as a batch.
 
 ## User Preferences
 
